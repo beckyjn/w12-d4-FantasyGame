@@ -5,9 +5,10 @@ import Enums.Spells;
 import Enums.Weapons;
 import creature.Creature;
 import interfaces.IProtecc;
+import interfaces.IQuest;
 import interfaces.ISpell;
 
-public class Wizard extends Creature implements ISpell, IProtecc {
+public class Wizard extends Creature implements ISpell, IProtecc, IQuest {
     public Wizard(String name, int attack, int defence, int intelligence, int charisma, int speed, int health, int mana, Weapons weapon, Armour armour) {
         super(name, attack, defence, intelligence, charisma, speed, health, mana, weapon, armour);
     }

@@ -5,8 +5,9 @@ import Enums.Weapons;
 import creature.Creature;
 import interfaces.IAttacc;
 import interfaces.IProtecc;
+import interfaces.IQuest;
 
-public class Monk extends Creature implements IAttacc, IProtecc {
+public class Monk extends Creature implements IAttacc, IProtecc, IQuest {
     public Monk(String name, int attack, int defence, int intelligence, int charisma, int speed, int health, int mana, Weapons weapon, Armour armour) {
         super(name, attack, defence, intelligence, charisma, speed, health, mana, weapon, armour);
         this.attack = attack / 2;

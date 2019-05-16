@@ -4,9 +4,13 @@ import Enums.Armour;
 import Enums.Weapons;
 import creature.Creature;
 import interfaces.IAttacc;
+import interfaces.ILoot;
 import interfaces.IProtecc;
+import interfaces.IQuest;
 
-public class Barbarian extends Creature implements IAttacc, IProtecc {
+import java.util.ArrayList;
+
+public class Barbarian extends Creature implements IAttacc, IProtecc, IQuest {
 
     public Barbarian(String name, int attack, int defence, int intelligence, int charisma, int speed, int health, int mana, Weapons weapon, Armour armour) {
         super(name, attack, defence, intelligence, charisma, speed, health, mana, weapon, armour);
@@ -39,6 +43,11 @@ public class Barbarian extends Creature implements IAttacc, IProtecc {
         int damageDone = calculateDamageDone(target);
         target.reduceHealth(damageDone);
     }
+
+//    public void winLoot(){
+//        loot = loot.getOrDefault(ILoot.getType(), 0);
+//    }
+
 
 
 }

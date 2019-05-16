@@ -5,6 +5,7 @@ import Enums.Weapons;
 import interfaces.ILoot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public  abstract class Creature {
     protected String name;
@@ -17,7 +18,7 @@ public  abstract class Creature {
     protected int mana;
     protected Weapons weapon;
     protected Armour armour;
-    protected ArrayList<ILoot> loot;
+    protected HashMap<ILoot, Integer> loot;
 
     public Creature(String name, int attack, int defence, int intelligence, int charisma, int speed, int health, int mana, Weapons weapon, Armour armour) {
         this.name = name;
@@ -30,7 +31,7 @@ public  abstract class Creature {
         this.mana = mana;
         this.weapon = weapon;
         this.armour = armour;
-        this.loot = new ArrayList<>();
+        this.loot = new HashMap<>();
     }
 
     public int getAttack() {
@@ -69,7 +70,7 @@ public  abstract class Creature {
         return armour;
     }
 
-    public ArrayList<ILoot> getLoot() {
+    public HashMap<ILoot, Integer> getLoot() {
         return loot;
     }
 
@@ -97,7 +98,7 @@ public  abstract class Creature {
         this.armour = armour;
     }
 
-    public void setLoot(ArrayList<ILoot> loot) {
+    public void setLoot(HashMap<ILoot, Integer> loot) {
         this.loot = loot;
     }
 
