@@ -7,9 +7,9 @@ import interfaces.ILoot;
 import java.util.ArrayList;
 
 public  abstract class Creature {
+    protected String name;
     protected int attack;
     protected int defence;
-    protected int constitution;
     protected int intelligence;
     protected int charisma;
     protected int speed;
@@ -19,10 +19,10 @@ public  abstract class Creature {
     protected Armour armour;
     protected ArrayList<ILoot> loot;
 
-    public Creature(int attack, int defence, int constitution, int intelligence, int charisma, int speed, int health, int mana, Weapons weapon, Armour armour) {
+    public Creature(String name, int attack, int defence, int intelligence, int charisma, int speed, int health, int mana, Weapons weapon, Armour armour) {
+        this.name = name;
         this.attack = attack;
         this.defence = defence;
-        this.constitution = constitution;
         this.intelligence = intelligence;
         this.charisma = charisma;
         this.speed = speed;
@@ -39,10 +39,6 @@ public  abstract class Creature {
 
     public int getDefence() {
         return defence;
-    }
-
-    public int getConstitution() {
-        return constitution;
     }
 
     public int getIntelligence() {
@@ -105,23 +101,8 @@ public  abstract class Creature {
         this.loot = loot;
     }
 
-    public int attackStrength(Creature attacker){
-        int weaponDamage = attacker.getWeapon().getDamage();
-        int calculateDamage = (int)(Math.random() * weaponDamage + 1);
-        return calculateDamage + attacker.getAttack();
-    }
-
-    public int defenceStrength(){
-        int targetsDefence = armour.getProtection();
-        int calculateDefence = (int)(Math.random() * targetsDefence + 1);
-        return calculateDefence + defence;
-    }
-
-    public void healthReduction(Creature attacker){
-        int damageDone = attackStrength(attacker) - defenceStrength();
-        if (damageDone > 0 ){
-            health -= damageDone;
-        }
+    public void reduceHealth(int damageDone){
+        health -= damageDone;
     }
 }
 
