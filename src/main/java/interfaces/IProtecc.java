@@ -2,6 +2,6 @@ package interfaces;
 
 import creature.Creature;
 
-public interface IDefend {
+public interface IProtecc {
     int defenceStrength(Creature creature);
 }

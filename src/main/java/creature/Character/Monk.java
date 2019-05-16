@@ -1,11 +1,12 @@
-package creature;
+package creature.Character;
 
 import Enums.Armour;
 import Enums.Weapons;
-import interfaces.IAttack;
-import interfaces.IDefend;
+import creature.Creature;
+import interfaces.IAttacc;
+import interfaces.IProtecc;
 
-public class Monk extends Creature implements IAttack, IDefend {
+public class Monk extends Creature implements IAttacc, IProtecc {
     public Monk(String name, int attack, int defence, int intelligence, int charisma, int speed, int health, int mana, Weapons weapon, Armour armour) {
         super(name, attack, defence, intelligence, charisma, speed, health, mana, weapon, armour);
         this.attack = attack / 2;

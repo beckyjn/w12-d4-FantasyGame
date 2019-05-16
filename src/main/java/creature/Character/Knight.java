@@ -1,23 +1,23 @@
-package creature;
+package creature.Character;
 
 import Enums.Armour;
 import Enums.Weapons;
-import interfaces.IAttack;
-import interfaces.IDefend;
+import creature.Creature;
+import interfaces.IAttacc;
+import interfaces.IProtecc;
 
-public class Barbarian extends Creature implements IAttack, IDefend {
-
-    public Barbarian(String name, int attack, int defence, int intelligence, int charisma, int speed, int health, int mana, Weapons weapon, Armour armour) {
+public class Knight extends Creature implements IAttacc, IProtecc {
+    public Knight(String name,int attack, int defence, int intelligence, int charisma, int speed, int health, int mana, Weapons weapon, Armour armour) {
         super(name, attack, defence, intelligence, charisma, speed, health, mana, weapon, armour);
-        this.attack = attack*2;
+        this.defence= defence*2;
     }
+
 
     public int attackStrength(){
         int weaponDamage = weapon.getDamage();
         int calculateDamage = (int)(Math.random() * weaponDamage + 1);
         return calculateDamage + getAttack();
     }
-
 
     public int defenceStrength(Creature target){
         int targetsDefence = target.getArmour().getProtection();
@@ -38,6 +38,4 @@ public class Barbarian extends Creature implements IAttack, IDefend {
         int damageDone = calculateDamageDone(target);
         target.reduceHealth(damageDone);
     }
-
-
 }

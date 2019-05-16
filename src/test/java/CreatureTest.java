@@ -1,7 +1,7 @@
 import Enums.Armour;
 import Enums.Weapons;
-import creature.Barbarian;
-import creature.Knight;
+import creature.Character.Barbarian;
+import creature.Character.Knight;
 import org.junit.Before;
 import org.junit.Test;
 

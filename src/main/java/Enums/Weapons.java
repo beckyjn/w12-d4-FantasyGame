@@ -2,6 +2,7 @@ package Enums;
 
 public enum Weapons {
     AXE(12),
+    CLUB(10),
     SWORD(8),
     DAGGER(4),
     WAND(3);
