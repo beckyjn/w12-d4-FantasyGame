@@ -44,9 +44,9 @@ public class Barbarian extends Creature implements IAttacc, IProtecc, IQuest {
         target.reduceHealth(damageDone);
     }
 
-//    public void winLoot(){
+    public void winLoot(){
 //        loot = loot.getOrDefault(ILoot.getType(), 0);
-//    }
+    }
 
 
 
